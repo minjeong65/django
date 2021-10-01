@@ -49,7 +49,3 @@ path( route, view, kwargs, name)
 4. views.py 에 URL 매핑에 추가한 함수 작성
 5. 함수에 템플릿 작성
 
-
-
-**POST / GET**
-
