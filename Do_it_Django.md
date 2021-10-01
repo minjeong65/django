@@ -1,6 +1,6 @@
 # DO IT Django
 
-**부트스트랩**
+### **부트스트랩**
 
  mb-2 : 공백주는 법
 
@@ -10,19 +10,23 @@
 
 
 
+
+
  btn-sm : 버튼 크기
 
 * lg / sm / xs / default
 
 
 
-**messages 모듈 (views.py)**
+
+
+### **messages 모듈 (views.py)**
 
 1회성 메시지 생성 : 1회 노출되고 사라짐
 
 
 
-**render**
+### **render**
 
 render( request, template_name, context = None, content_type=None, status = None, using = None)
 
@@ -31,7 +35,7 @@ render( request, template_name, context = None, content_type=None, status = None
 
 
 
-**path**
+### **path**
 
 path( route, view, kwargs, name)
 
@@ -41,7 +45,7 @@ path( route, view, kwargs, name)
 
 
 
-**새 기능 추가 패턴**
+### **새 기능 추가 패턴**
 
 1. 템플릿에 추가 기능을 위한 링크나 버튼 추가
 2. urls.py에 링크에 해당되는 URL 매핑을 작성
