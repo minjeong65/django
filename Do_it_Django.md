@@ -112,3 +112,33 @@ You are trying to change the nullable field 'author' on answer to non-nullable w
 
 현재 웹페이지에서 다른 웹페이지로 이동하거나 현재 페이지에서 특정 부분으로 스크롤 이동할 때 사용
 
+
+
+### 마크다운
+
+* 설치 : pip install markdown
+
+* 필터 등록 : pybo_filter.py
+
+  * ```python
+    import markdown  
+    django.utils.safestring import mark_safe
+    
+    @register.filter()
+    def mark(value):
+        extensions = ["nl2br", "fenced_code"]
+        return mark_safe(markdown.markdown(value, extensions=extensions))
+    ```
+
+* 적용 : question_detail.html
+
+  * ```python
+    {% load pybo_filter %}
+    
+    <div class="card-text">{{ question.content|mark }}</div>
+    #(...생략...)
+    <div class="card-text">{{ answer.content|mark }}</div>
+    ```
+
+    
+
