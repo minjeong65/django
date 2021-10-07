@@ -140,5 +140,31 @@ You are trying to change the nullable field 'author' on answer to non-nullable w
     <div class="card-text">{{ answer.content|mark }}</div>
     ```
 
-    
+
+
+
+### AWS 라이트세일
+
+* 아마존에서 운영하는 웹 서비스에 특화된 클라우드 서비스
+* 서버 생성
+* 한 달 뒤 서버 삭제 필수!
+
+
+
+### Git
+
+커밋 과정
+
+* git init : git을 사용할 수 있도록 .git이 만들어짐 (숨김파일)
+* .gitignore 생성 : 깃으로 관리하지 않을 대상을 기술하여 생성
+* git add : 모든 파일을 추가하려면 *을 사용
+* git commit : 커밋
+  * -m : 커밋의 메시지를 입력하는 옵션
+* git remote add origin : 깃허브 연결 - 로컬저장소와 원격저장소를 연결하는 것
+* git push : 저장소에 올리기
+* git pull : 이전에 올렸던 코드를 업데이트하거나 새로 커밋한 것을 내려받음
+
+
+
+
 
