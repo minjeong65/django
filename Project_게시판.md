@@ -22,6 +22,7 @@
     * < input type="file" **name = "photo" **class="form-control" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" aria-label="Upload" >
   * detail.html 
     * < img src = "{{ **b.getphoto** }}" >
+      * context = { 'b': b }
 
 
 
@@ -48,9 +49,60 @@
 * user가 작성자인 경우 user의 글 삭제
 * 실수를 방지하기 위해 modal 생성
 
+</br>
+
+### PAGINATION
+
+* django-mathfilters 설치
+  * mathfilters 앱 등록(settings.py)
+  * {% load mathfilters %}
+
+* from django.core.paginator import **Paginator** : 페이징을 위한 클래스
+
+* `Paginator` ( *object_list* , *per_page* , *orphans=0* , *allow_empty_first_page=True* )
+
+  * 필수 인수 - object_list : 페이징할 객체, per_page : 한 페이지에 보여줄 목록 개수
+
+* page = request.GET.get('page','1') 
+
+* 페이징 객체 속성
+
+  * | 항목                 | 설명                                |
+    | :------------------- | :---------------------------------- |
+    | paginator.count      | 전체 게시물 개수                    |
+    | paginator.per_page   | 페이지당 보여줄 게시물 개수         |
+    | paginator.page_range | 페이지 범위                         |
+    | number               | 현재 페이지 번호                    |
+    | previous_page_number | 이전 페이지 번호                    |
+    | next_page_number     | 다음 페이지 번호                    |
+    | has_previous         | 이전 페이지 유무                    |
+    | has_next             | 다음 페이지 유무                    |
+    | start_index          | 현재 페이지 시작 인덱스(1부터 시작) |
+    | end_index            | 현재 페이지의 끝 인덱스(1부터 시작) |
+
+</br>
+
+* 페이징 기능
+
+  * | 페이징 기능               | 코드                                                         |
+    | :------------------------ | :----------------------------------------------------------- |
+    | 이전 페이지가 있는지 체크 | `{% if question_list.has_previous %}`                        |
+    | 이전 페이지 번호          | `{{ question_list.previous_page_number }}`                   |
+    | 다음 페이지가 있는지 체크 | `{% if question_list.has_next %}`                            |
+    | 다음 페이지 번호          | `{{ question_list.next_page_number }}`                       |
+    | 페이지 리스트 루프        | `{% for page_number in question_list.paginator.page_range %}` |
+    | 현재 페이지와 같은지 체크 | `{% if page_number == question_list.number %}`               |
+
+</br>
+
+* active 기능
+  * 현재 페이지를 표시하기 위해 활성화 기능 추가
+  * class="page-item {% if blist.number == i %}active{% endif %}"
 
 
 
+**ERROR**
 
-### PAGING
+* UnboundLocalError: local variable 'b' referenced before assignment
+  * 모델에 없는 값을 사용하려고 하기 때문
 
