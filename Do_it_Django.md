@@ -14,7 +14,27 @@
 
 * lg / sm / xs / default
 
+### URL과 뷰
 
+* 장고의 기본적인 흐름 : 브라우저에 로컬 서버로 페이지를 요청하면 urls.py에서 URL 매핑을 통해 views.py의 함수를 호출하고, 호출된 결과를 브라우저에 전달
+
+
+
+### 모델
+
+* 장고는 기본적으로 SQLite를 사용
+
+  * SQLite는 주로 소규모 프로젝트에서 사용
+
+* 모델을 이용하여 SQL 쿼리문 없이 데이터를 처리할 수 있음 => ORM 사용
+
+  * ORM (Object Relational Mapping) : 데이터베이스 테이블을 모델화하여 사용
+
+* migrate : 각 앱들이 사용하는 데이터 테이블을 생성하는 과정
+
+  * makemigrations : migrate를 하기 전에 데이터를 올리는 과정
+
+  
 
 ### **messages 모듈 (views.py)**
 
