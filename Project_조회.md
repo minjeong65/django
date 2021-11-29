@@ -6,7 +6,25 @@ Django는 기본적으로 SQLite를 사용하도록 설정되어 있음
 
 </br>
 
-### 조회
+### 조회 데이터
+
+* subject
+
+* writer
+
+* content
+
+* ctime
+
+  ```django-python
+  # 한국시간으로 설정
+  LANGUAGE_CODE = 'ko-kr'
+  TIME_ZONE = 'Asia/Seoul'
+  ```
+
+</br>
+
+### 함수
 
 **all** : 모든 데이터를 가져옴
 
@@ -86,4 +104,9 @@ Django는 기본적으로 SQLite를 사용하도록 설정되어 있음
 </br>
 
 **Error**
+
+* no such column: board_board.ctime (혹은)
+* django.db.utils.OperationalError: table board_board has no column named ctime
+  * migrate을 새로 해도 테이블이 생성되지 않음
+  * 해결 : SQLite 프로그램을 통해 직접 테이블 추가
 
