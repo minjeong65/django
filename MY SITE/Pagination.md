@@ -106,10 +106,6 @@
 
 </br>
 
-**현재 페이지 양쪽으로 페이지 번호 두 개씩 뜨도록 구현(잠시 미룸)**
-
-</br>
-
 **ERROR**
 
 * UnboundLocalError: local variable 'b' referenced before assignment
