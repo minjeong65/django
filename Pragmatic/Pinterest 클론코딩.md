@@ -36,7 +36,7 @@ git으로 추적하지 않을 파일들을 정의한 파일
 
 < git bash >
 
-> cd c/my/pragmatic 
+> cd c:/my/pragmatic 
 
 파일이 있는 디렉토리로 이동
 
